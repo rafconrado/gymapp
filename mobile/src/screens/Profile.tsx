@@ -100,7 +100,7 @@ export function Profile() {
 
     try {
       const photoSelected = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: ImagePicker.MediaTypeOptions.Images,
+        mediaTypes: ['images'],
         quality: 1,
         aspect: [4, 4],
         allowsEditing: true,
@@ -118,12 +118,11 @@ export function Profile() {
         // Usamos 'FileSystem.getInfoAsync' para pegar o tamanho do arquivo.
         const photoInfo = await FileSystem.getInfoAsync(photoUri);
 
-        // Checamos se a informação do tamanho está disponível.
+        // Checa se a informação do tamanho está disponível.
         if (photoInfo.exists && photoInfo.size) {
           const photoSizeInMB = photoInfo.size / 1024 / 1024;
 
           if (photoSizeInMB > 5) {
-            // A função para aqui se a imagem for muito grande.
             return toast.show({
               placement: "top",
               render: ({ id }) => (
@@ -143,7 +142,7 @@ export function Profile() {
 
         const photoFile = {
           name: `${user.name}.${fileExtension}`.toLowerCase(),
-          uri: photoSelected.assets[0].uri,
+          uri: photoUri,
           type: `${photoSelected.assets[0].type}/${fileExtension}`,
         } as any;
 
@@ -160,7 +159,10 @@ export function Profile() {
           }
         );
 
-        const userUpdated = user;
+        const userUpdated = {
+          ...user,
+          avatar: avatarUpdatedResponse.data.avatar
+        };
         userUpdated.avatar = avatarUpdatedResponse.data.avatar;
         updateUserProfile(userUpdated);
 
@@ -181,7 +183,6 @@ export function Profile() {
     } catch (error) {
       console.log(error);
 
-      // Mostra um feedback visual para o usuário.
       toast.show({
         placement: "top",
         render: ({ id }) => (
@@ -243,6 +244,10 @@ export function Profile() {
       setIsUpdating(false);
     }
   }
+
+  const avatarUrl = user.avatar
+    ? `${api.defaults.baseURL}/avatar/${user.avatar}?t=${Date.now()}`
+    : null;
 
   return (
     <VStack flex={1}>
