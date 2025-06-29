@@ -55,16 +55,22 @@ export function AuthContextProvider({ children }: AuthContextProviderProps) {
 
   async function signIn(email: string, password: string) {
     try {
+      // Inicia o carregamento antes da requisição, já que ela é assíncrona
+      setIsLoadgingUserStorageData(true);
+
       const { data } = await api.post("/sessions", { email, password });
 
       if (data.user && data.token) {
+        // Primeiro salva no storage
         await storageUserAndTokenSave(data.user, data.token);
-
+        // Depois atualiza o estado e o axios globalmente
         userAndTokenUpdate(data.user, data.token);
       }
     } catch (error) {
+      // O erro já está sendo propagado para ser tratado por quem chama o signIn
       throw error;
     } finally {
+      // Garante que o estado de carregamento é desativado em qualquer caso
       setIsLoadgingUserStorageData(false);
     }
   }
@@ -76,6 +82,7 @@ export function AuthContextProvider({ children }: AuthContextProviderProps) {
       setUser({} as UserDTO);
       await storageUserRemove();
       await storageAuthTokenRemove();
+      delete api.defaults.headers.common["Authorization"];
     } catch (error) {
       throw error;
     } finally {
@@ -85,17 +92,16 @@ export function AuthContextProvider({ children }: AuthContextProviderProps) {
 
   async function updateUserProfile(userUpdated: UserDTO) {
     try {
-      setUser(userUpdated)
+      setUser(userUpdated);
       await storageUserSave(userUpdated);
     } catch (error) {
       throw error;
-
     }
   }
 
   async function loadUserData() {
     try {
-      setIsLoadgingUserStorageData(true);
+      setIsLoadgingUserStorageData(true); // Ativa o carregamento ao iniciar
 
       const userLogged = await storageUserGet();
       const token = await storageAuthTokenGet();
@@ -106,7 +112,7 @@ export function AuthContextProvider({ children }: AuthContextProviderProps) {
     } catch (error) {
       throw error;
     } finally {
-      setIsLoadgingUserStorageData(false);
+      setIsLoadgingUserStorageData(false); // Desativa o carregamento ao finalizar
     }
   }
 
@@ -116,7 +122,13 @@ export function AuthContextProvider({ children }: AuthContextProviderProps) {
 
   return (
     <AuthContext.Provider
-      value={{ user, signIn, signOut, isLoadgingUserStorageData, updateUserProfile }}
+      value={{
+        user,
+        signIn,
+        signOut,
+        isLoadgingUserStorageData,
+        updateUserProfile,
+      }}
     >
       {children}
     </AuthContext.Provider>

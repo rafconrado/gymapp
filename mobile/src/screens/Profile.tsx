@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ScrollView, TouchableOpacity } from "react-native";
 import {
   Center,
@@ -84,6 +84,7 @@ export function Profile() {
     control,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<FormDataProps>({
     defaultValues: {
       name: user.name,
@@ -95,12 +96,18 @@ export function Profile() {
     resolver: yupResolver(profileSchema),
   });
 
+  useEffect(() => {
+    // Este efeito será executado sempre que o 'user' do contexto mudar
+    // e irá resetar o formulário com os novos dados.
+    reset({ name: user.name, email: user.email });
+  }, [user, reset]);
+
   async function handleUserPhotoSelect() {
     setPhotoIsLoading(true);
 
     try {
       const photoSelected = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: ['images'],
+        mediaTypes: ["images"],
         quality: 1,
         aspect: [4, 4],
         allowsEditing: true,
@@ -141,9 +148,12 @@ export function Profile() {
         const fileExtension = photoUri.split(".").pop();
 
         const photoFile = {
-          name: `${user.name}.${fileExtension}`.toLowerCase(),
+          name: `${user.name.replace(
+            /\s/g,
+            "_"
+          )}.${fileExtension}`.toLowerCase(),
           uri: photoUri,
-          type: `${photoSelected.assets[0].type}/${fileExtension}`,
+          type: `${photoSelected.assets[0].mimeType}`,
         } as any;
 
         const userPhotoUploadForm = new FormData();
@@ -161,10 +171,12 @@ export function Profile() {
 
         const userUpdated = {
           ...user,
-          avatar: avatarUpdatedResponse.data.avatar
+          avatar: avatarUpdatedResponse.data.avatar,
         };
-        userUpdated.avatar = avatarUpdatedResponse.data.avatar;
-        updateUserProfile(userUpdated);
+
+        console.log("userUpdated", userUpdated);
+
+        await updateUserProfile(userUpdated);
 
         toast.show({
           placement: "top",
@@ -204,11 +216,9 @@ export function Profile() {
     try {
       setIsUpdating(true);
 
-      const userUpdated = user;
-      userUpdated.name = data.name;
+      const userUpdated = { ...user, name: data.name };
 
       await api.put("/users", data);
-
       await updateUserProfile(userUpdated);
 
       toast.show({
@@ -256,11 +266,8 @@ export function Profile() {
       <ScrollView contentContainerStyle={{ paddingBottom: 36 }}>
         <Center mt="$6" px="$10">
           <UserPhoto
-            source={
-              user.avatar
-                ? { uri: `${api.defaults.baseURL}/avatar/${user.avatar}` }
-                : defaultUserPhotoImg
-            }
+            key={avatarUrl}
+            source={user.avatar ? { uri: avatarUrl } : defaultUserPhotoImg}
             alt="Foto do usuário"
             size="xl"
           />

@@ -13,14 +13,15 @@ import { useAuth } from "@hooks/useAuth";
 export function HomeHeader() {
   const { user, signOut } = useAuth();
 
+  // Adicione esta lógica para criar a URL com o timestamp
+  const avatarUrl = user.avatar
+    ? `${api.defaults.baseURL}/avatar/${user.avatar}?t=${Date.now()}`
+    : null;
+
   return (
     <HStack bg="$gray600" pt="$16" pb="$5" px="$8" alignItems="center" gap="$4">
       <UserPhoto
-        source={
-          user.avatar
-            ? { uri: `${api.defaults.baseURL}/avatar/${user.avatar}` }
-            : defaultUserPhotoImg
-        }
+        source={user.avatar ? { uri: avatarUrl } : defaultUserPhotoImg}
         w="$16"
         h="$16"
         alt="Imagem do usuário"
