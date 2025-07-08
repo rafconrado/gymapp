@@ -55,8 +55,16 @@ api.registerInterceptTokenManager = SignOut => {
 
           return new Promise(async (resolve, reject) => {
             try {
+              const { data } = await api.post('/sessions/refresh-token', {
+                refresh_token
+              })
+              console.log(data)
 
             } catch (error: any) {
+              failedQueue.forEach(request => request.onFailed(error));
+
+              SignOut();
+              reject(error);
 
             } finally {
               isRefreshing = false;
