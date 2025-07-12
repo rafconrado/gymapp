@@ -1,123 +1,128 @@
-💪 GymApp - Gerenciador de Treinos de Academia
-Leve seu treino para o próximo nível com o GymApp! Desenvolvido com React Native e Node.js, este projeto, baseado na trilha Ignite da Rocketseat, foi aprimorado para oferecer uma solução completa e robusta para gerenciamento de treinos.
+# 💪 GymApp - Gerenciador de Treinos de Academia
 
-🎬 Demonstração
+Leve seu treino para o próximo nível com o **GymApp**!  
+Este app mobile, desenvolvido com **React Native + Expo** e uma API em **Node.js**, é uma solução completa para acompanhar treinos, registrar progresso e explorar exercícios — tudo isso com uma interface moderna e responsiva.
 
+Projeto baseado na trilha **Ignite da Rocketseat**, com diversas melhorias e personalizações.
 
-✨ Recursos Principais
-Autenticação Completa: Sistema de login seguro com JWT para proteger os dados do usuário.
+---
 
-Catálogo de Exercícios: Explore uma lista de exercícios, convenientemente organizados por grupos musculares.
+## 🎬 Demonstração
 
-Detalhes do Exercício: Visualize informações detalhadas para cada exercício, incluindo demonstrações visuais.
+---
 
-Histórico de Treinos: Registre cada exercício concluído e mantenha um histórico do seu progresso.
+## ✨ Recursos Principais
 
-Perfil Personalizável: Faça o upload de uma foto de perfil para personalizar sua conta.
+✅ **Autenticação Segura:** Login com JWT para proteger seus dados  
+📚 **Catálogo de Exercícios:** Listagem organizada por grupo muscular  
+📖 **Detalhes Visuais:** Página com informações e imagens do exercício  
+📈 **Histórico de Treinos:** Registre seu desempenho por sessão  
+🖼 **Perfil Personalizável:** Upload de imagem direto do app  
+🧼 **Código Limpo:** Componentização, tipagem com TypeScript e organização clara
 
-Limpeza de Código: Código bem estruturado, componentizado e com um sistema de rotas bem definido.
+---
 
-🛠️ Tecnologias Utilizadas
-Esta solução é um monorepo que inclui tanto o frontend mobile quanto o backend da API.
+## 🛠️ Tecnologias Utilizadas
 
-📱 App Mobile (React Native)
-⚙️ API (Node.js)
-🚀 Começando
-Siga estas instruções para obter uma cópia local do projeto em funcionamento.
+### 📱 App Mobile (React Native)
+- React Native + Expo
+- TypeScript
+- React Navigation
+- Axios
+- React Hook Form + Yup
+- AsyncStorage
+- Gluestack UI
+- Lucide Icons
 
-Pré-requisitos
-Node.js (versão LTS, ex: 18.x ou 20.x)
+### ⚙️ API (Node.js)
+- Express
+- SQLite3 + Knex
+- JWT
+- Multer (upload de imagens)
+- Swagger (documentação)
+- Dayjs
 
-NPM ou Yarn
+---
 
-Expo Go App instalado no seu smartphone.
+## 🚀 Começando
 
-(Opcional) Emulador Android / Simulador iOS configurado.
+### 📋 Pré-requisitos
 
-Instalação
-Clone o repositório:
+- Node.js (v18+ ou v20+)
+- NPM ou Yarn
+- Expo Go (no celular)
+- (Opcional) Emulador Android / Simulador iOS
 
-Bash
+---
 
+### 📦 Instalação
+
+```bash
+# Clone o repositório
 git clone https://github.com/rafconrado/gymapp.git
-Navegue até o diretório do projeto:
-
-Bash
-
 cd gymapp
-Instale as dependências da API (backend):
-
-Bash
-
+Instale as dependências da API:
+bash
+Copiar
+Editar
 cd api
 npm install
-Instale as dependências do App (mobile):
-
-Bash
-
+Instale as dependências do App:
+bash
+Copiar
+Editar
 cd ../mobile
 npm install
-Executando o Aplicativo
-Para o sistema funcionar, tanto a API quanto o App precisam estar rodando simultaneamente.
+▶️ Executando o Projeto
+🔌 Inicie a API:
+bash
+Copiar
+Editar
+# No diretório /api
+npm run migrate    # Cria o banco de dados
+npm run seed       # Popula com dados iniciais
+npm run dev        # Inicia o servidor backend
+A API estará disponível em: http://localhost:3333
 
-Inicie a API (Backend):
-
-No diretório api/, execute os seguintes comandos:
-
-Bash
-
-# Cria as tabelas do banco de dados
-npm run migrate
-
-# Popula o banco com dados iniciais (opcional, mas recomendado)
-npm run seed
-
-# Inicia o servidor backend
-npm run dev
-O servidor da API estará disponível em http://localhost:3333.
-
-Inicie o App (Mobile):
-
-Em um novo terminal, navegue até o diretório mobile/ e execute:
-
-Bash
-
+📱 Inicie o App Mobile:
+bash
+Copiar
+Editar
+# No diretório /mobile
 npm start
 # ou
-# expo start
-Após o servidor do Expo iniciar, escaneie o QR Code com o app Expo Go em seu celular ou use as opções do terminal para abrir em um emulador (a para Android, i para iOS).
+expo start
+Escaneie o QR Code com o app Expo Go ou use a (Android) / i (iOS) no terminal.
 
 📜 Scripts Disponíveis
-API (api/package.json)
-npm run dev: Inicia o servidor em modo de desenvolvimento com ts-node-dev.
+API (/api)
+npm run dev – Inicia o servidor em modo dev
 
-npm run migrate: Executa as migrations do Knex para criar a estrutura do banco.
+npm run migrate – Cria a estrutura do banco
 
-npm run seed: Popula o banco de dados com dados de teste.
+npm run seed – Popula o banco com dados fake
 
-Mobile (mobile/package.json)
-npm start: Inicia o servidor de desenvolvimento Expo.
+Mobile (/mobile)
+npm start – Inicia o Expo
 
-npm run android: Inicia e tenta abrir o app no emulador/dispositivo Android.
+npm run android – Roda no emulador Android
 
-npm run ios: Inicia e tenta abrir o app no simulador/dispositivo iOS.
+npm run ios – Roda no simulador iOS
 
 🤝 Contribuindo
-Contribuições são o que tornam a comunidade open source um lugar incrível para aprender e criar. Qualquer contribuição que você fizer será muito apreciada.
+Contribuições são bem-vindas!
 
-Faça um Fork do Projeto
+Fork o projeto
 
-Crie sua Feature Branch (git checkout -b feature/AmazingFeature)
+Crie uma branch (git checkout -b feature/minha-feature)
 
-Commit suas mudanças (git commit -m 'Add some AmazingFeature')
+Commit suas mudanças (git commit -m 'feat: minha feature')
 
-Push para a Branch (git push origin feature/AmazingFeature)
+Push (git push origin feature/minha-feature)
 
 Abra um Pull Request
 
 📧 Contato
 Rafael Conrado
-
-GitHub: @rafconrado
-
-LinkedIn: linkedin.com/in/rafconradoo
+🔗 GitHub: @rafconrado
+🔗 LinkedIn: linkedin.com/in/rafconradoo
