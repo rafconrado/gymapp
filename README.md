@@ -1,103 +1,123 @@
-💪 GymApp
-Aplicativo para gerenciamento de treinos de academia, desenvolvido como parte dos estudos da trilha Ignite da Rocketseat, com melhorias e funcionalidades adicionais.
+💪 GymApp - Gerenciador de Treinos de Academia
+Leve seu treino para o próximo nível com o GymApp! Desenvolvido com React Native e Node.js, este projeto, baseado na trilha Ignite da Rocketseat, foi aprimorado para oferecer uma solução completa e robusta para gerenciamento de treinos.
 
-O projeto consiste em um aplicativo mobile construído com React Native e uma API REST de suporte desenvolvida em Node.js.
+🎬 Demonstração
 
-📱 Funcionalidades Principais
-Autenticação de Usuário: Login seguro com validação e persistência usando JWT.
 
-Listagem de Exercícios: Navegue por grupos musculares e encontre exercícios detalhados.
+✨ Recursos Principais
+Autenticação Completa: Sistema de login seguro com JWT para proteger os dados do usuário.
 
-Histórico de Treinos: Registre os exercícios realizados para acompanhar seu progresso.
+Catálogo de Exercícios: Explore uma lista de exercícios, convenientemente organizados por grupos musculares.
 
-Upload de Avatar: Personalize seu perfil com uma imagem de sua escolha.
+Detalhes do Exercício: Visualize informações detalhadas para cada exercício, incluindo demonstrações visuais.
 
-Consumo de API: Integração robusta com o backend via Axios.
+Histórico de Treinos: Registre cada exercício concluído e mantenha um histórico do seu progresso.
 
-Armazenamento Local: Utilização do AsyncStorage para salvar o token de autenticação.
+Perfil Personalizável: Faça o upload de uma foto de perfil para personalizar sua conta.
 
-🧪 Tecnologias Utilizadas
+Limpeza de Código: Código bem estruturado, componentizado e com um sistema de rotas bem definido.
+
+🛠️ Tecnologias Utilizadas
+Esta solução é um monorepo que inclui tanto o frontend mobile quanto o backend da API.
+
 📱 App Mobile (React Native)
 ⚙️ API (Node.js)
+🚀 Começando
+Siga estas instruções para obter uma cópia local do projeto em funcionamento.
 
-🚀 Como Executar o Projeto
+Pré-requisitos
+Node.js (versão LTS, ex: 18.x ou 20.x)
 
-📦 Pré-requisitos
-Antes de começar, garanta que você tenha o seguinte instalado:
+NPM ou Yarn
 
-Node.js (versão LTS recomendada)
+Expo Go App instalado no seu smartphone.
 
-Yarn ou npm
+(Opcional) Emulador Android / Simulador iOS configurado.
 
-Expo CLI: npm install --global expo-cli
-
-Um cliente de banco de dados para SQLite, como o DB Browser for SQLite (opcional).
-
-🔧 Instalação e Execução
+Instalação
 Clone o repositório:
 
 Bash
 
-git clone https://github.com/rafconrado/gymapp
-cd gymapp
-Configure e inicie a API (Backend):
+git clone https://github.com/rafconrado/gymapp.git
+Navegue até o diretório do projeto:
 
 Bash
 
-# Navegue até a pasta da API
+cd gymapp
+Instale as dependências da API (backend):
+
+Bash
+
 cd api
-
-# Instale as dependências
 npm install
+Instale as dependências do App (mobile):
 
-# Execute as migrations (criação das tabelas) e as seeds (dados iniciais)
+Bash
+
+cd ../mobile
+npm install
+Executando o Aplicativo
+Para o sistema funcionar, tanto a API quanto o App precisam estar rodando simultaneamente.
+
+Inicie a API (Backend):
+
+No diretório api/, execute os seguintes comandos:
+
+Bash
+
+# Cria as tabelas do banco de dados
 npm run migrate
+
+# Popula o banco com dados iniciais (opcional, mas recomendado)
 npm run seed
 
-# Inicie o servidor da API
+# Inicia o servidor backend
 npm run dev
-A API estará rodando em http://localhost:3333.
+O servidor da API estará disponível em http://localhost:3333.
 
-Configure e inicie o App (Mobile):
+Inicie o App (Mobile):
+
+Em um novo terminal, navegue até o diretório mobile/ e execute:
 
 Bash
 
-# Em um novo terminal, navegue até a pasta do aplicativo
-cd mobile
+npm start
+# ou
+# expo start
+Após o servidor do Expo iniciar, escaneie o QR Code com o app Expo Go em seu celular ou use as opções do terminal para abrir em um emulador (a para Android, i para iOS).
 
-# Instale as dependências
-npm install
+📜 Scripts Disponíveis
+API (api/package.json)
+npm run dev: Inicia o servidor em modo de desenvolvimento com ts-node-dev.
 
-# Inicie o servidor de desenvolvimento do Expo
-npm run start
-Após iniciar, leia o QR Code com o aplicativo Expo Go em seu celular ou execute em um emulador.
+npm run migrate: Executa as migrations do Knex para criar a estrutura do banco.
 
-📂 Estrutura de Pastas (Mobile)
-src/
-├── assets/         # Fontes e imagens
-├── components/     # Componentes reutilizáveis
-├── contexts/       # Context API para gerenciamento de estado
-├── hooks/          # Hooks personalizados
-├── routes/         # Configuração das rotas de navegação
-├── screens/        # Telas da aplicação
-├── services/       # Configuração do Axios e chamadas de API
-├── storage/        # Funções para interagir com o AsyncStorage
-└── utils/          # Funções utilitárias
+npm run seed: Popula o banco de dados com dados de teste.
 
-🧠 Principais Aprendizados
-Durante o desenvolvimento deste projeto, aprofundei meus conhecimentos em:
+Mobile (mobile/package.json)
+npm start: Inicia o servidor de desenvolvimento Expo.
 
-Consumo e tratamento de respostas de APIs REST no React Native.
+npm run android: Inicia e tenta abrir o app no emulador/dispositivo Android.
 
-Gerenciamento de estado global com a Context API.
+npm run ios: Inicia e tenta abrir o app no simulador/dispositivo iOS.
 
-Criação de formulários complexos com validação e feedback de erro em tempo real.
+🤝 Contribuindo
+Contribuições são o que tornam a comunidade open source um lugar incrível para aprender e criar. Qualquer contribuição que você fizer será muito apreciada.
 
-Implementação de um fluxo de autenticação completo e persistente.
+Faça um Fork do Projeto
 
-Upload de arquivos (imagens) com multipart/form-data.
+Crie sua Feature Branch (git checkout -b feature/AmazingFeature)
 
-Criação de interfaces componentizadas e estilizadas com Gluestack UI.
+Commit suas mudanças (git commit -m 'Add some AmazingFeature')
 
-👨‍💻 Autor
-Desenvolvido por Rafael Conrado 🚀
+Push para a Branch (git push origin feature/AmazingFeature)
+
+Abra um Pull Request
+
+📧 Contato
+Rafael Conrado
+
+GitHub: @rafconrado
+
+LinkedIn: linkedin.com/in/rafconradoo
