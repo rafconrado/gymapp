@@ -9,22 +9,25 @@ Projeto baseado na trilha **Ignite da Rocketseat**, com diversas melhorias e per
 
 ## 🎬 Demonstração
 
+_(Adicione aqui prints ou um GIF do app rodando)_
+
 ---
 
 ## ✨ Recursos Principais
 
-✅ **Autenticação Segura:** Login com JWT para proteger seus dados  
-📚 **Catálogo de Exercícios:** Listagem organizada por grupo muscular  
-📖 **Detalhes Visuais:** Página com informações e imagens do exercício  
-📈 **Histórico de Treinos:** Registre seu desempenho por sessão  
-🖼 **Perfil Personalizável:** Upload de imagem direto do app  
-🧼 **Código Limpo:** Componentização, tipagem com TypeScript e organização clara
+✅ **Autenticação Segura**  
+📚 **Catálogo de Exercícios**  
+📖 **Detalhes Visuais dos Exercícios**  
+📈 **Histórico de Treinos**  
+🖼 **Perfil Personalizável com Foto**  
+🧼 **Código Limpo e Componentizado**
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
 ### 📱 App Mobile (React Native)
+
 - React Native + Expo
 - TypeScript
 - React Navigation
@@ -35,11 +38,12 @@ Projeto baseado na trilha **Ignite da Rocketseat**, com diversas melhorias e per
 - Lucide Icons
 
 ### ⚙️ API (Node.js)
+
 - Express
 - SQLite3 + Knex
 - JWT
-- Multer (upload de imagens)
-- Swagger (documentação)
+- Multer
+- Swagger
 - Dayjs
 
 ---
@@ -50,7 +54,7 @@ Projeto baseado na trilha **Ignite da Rocketseat**, com diversas melhorias e per
 
 - Node.js (v18+ ou v20+)
 - NPM ou Yarn
-- Expo Go (no celular)
+- App Expo Go no celular
 - (Opcional) Emulador Android / Simulador iOS
 
 ---
@@ -74,17 +78,17 @@ Editar
 cd ../mobile
 npm install
 ▶️ Executando o Projeto
-🔌 Inicie a API:
+🔌 Iniciar a API
 bash
 Copiar
 Editar
 # No diretório /api
-npm run migrate    # Cria o banco de dados
-npm run seed       # Popula com dados iniciais
+npm run migrate    # Cria as tabelas do banco de dados
+npm run seed       # Popula com dados iniciais (opcional)
 npm run dev        # Inicia o servidor backend
 A API estará disponível em: http://localhost:3333
 
-📱 Inicie o App Mobile:
+📱 Iniciar o App Mobile
 bash
 Copiar
 Editar
@@ -92,35 +96,46 @@ Editar
 npm start
 # ou
 expo start
-Escaneie o QR Code com o app Expo Go ou use a (Android) / i (iOS) no terminal.
+Escaneie o QR Code com o app Expo Go no celular
+ou use a para Android ou i para iOS no terminal.
 
 📜 Scripts Disponíveis
-API (/api)
-npm run dev – Inicia o servidor em modo dev
+🔧 API (/api)
+Script	Descrição
+npm run dev	Inicia o servidor em modo desenvolvimento
+npm run migrate	Cria a estrutura do banco de dados
+npm run seed	Popula o banco com dados fake
 
-npm run migrate – Cria a estrutura do banco
-
-npm run seed – Popula o banco com dados fake
-
-Mobile (/mobile)
-npm start – Inicia o Expo
-
-npm run android – Roda no emulador Android
-
-npm run ios – Roda no simulador iOS
+📱 Mobile (/mobile)
+Script	Descrição
+npm start	Inicia o servidor Expo
+npm run android	Roda no emulador Android
+npm run ios	Roda no simulador iOS
 
 🤝 Contribuindo
 Contribuições são bem-vindas!
 
-Fork o projeto
+Faça um fork do projeto
 
-Crie uma branch (git checkout -b feature/minha-feature)
+Crie uma branch:
 
-Commit suas mudanças (git commit -m 'feat: minha feature')
+bash
+Copiar
+Editar
+git checkout -b feature/NovaFeature
+Commit suas alterações:
 
-Push (git push origin feature/minha-feature)
+bash
+Copiar
+Editar
+git commit -m 'feat: adiciona NovaFeature'
+Push para o seu fork:
 
-Abra um Pull Request
+bash
+Copiar
+Editar
+git push origin feature/NovaFeature
+Abra um Pull Request 🚀
 
 📧 Contato
 Rafael Conrado
