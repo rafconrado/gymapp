@@ -59,57 +59,33 @@ Um app mobile moderno e funcional, criado com **React Native + Expo** e uma API 
 
 ---
 
-### 📦 Instalação e Execução
+## 🚀 Instalação e Execução
 
-```bash
-# Clone o projeto
+### Clone o Projeto
+
+bash
 git clone https://github.com/rafconrado/gymapp.git
-
 cd gymapp
-🔌 Iniciando a API
+Configurar API (Backend)
 bash
 Copiar
 Editar
-# Acesse o backend
 cd api
-
-# Instale as dependências
 npm install
-
-# Rode as migrations
 npm run migrate
-
-# (Opcional) Popule o banco
-npm run seed
-
-# Inicie o servidor
+npm run seed   # opcional
 npm run dev
-A API estará disponível em: http://localhost:3333
+A API estará em: http://localhost:3333
 
-📱 Iniciando o App Mobile
+Configurar App Mobile
 bash
 Copiar
 Editar
-# Acesse o app mobile
 cd ../mobile
-
-# Instale as dependências
 npm install
-
-# Inicie o Expo
 npm start
 # ou
 expo start
-📲 Leia o QR Code com o app Expo Go e comece a usar!
-
-⚙️ Scripts Úteis
-📂 Projeto	🛠️ Script	🔎 Descrição
-API	npm run dev	Inicia o backend
-npm run migrate	Cria o banco de dados
-npm run seed	Popula dados fictícios
-Mobile	npm start	Inicia o projeto no Expo
-npm run android	Roda no emulador Android
-npm run ios	Roda no simulador iOS
 
 🤝 Contribua com o Projeto
 Quer colaborar? Siga os passos abaixo:
