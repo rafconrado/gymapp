@@ -1,160 +1,134 @@
-💪 GymApp - Seu Gerenciador de Treinos Pessoal
-Leve seus treinos para o próximo nível com o GymApp! Um app mobile moderno e funcional, criado com React Native + Expo e uma API robusta em Node.js, perfeito para quem quer acompanhar treinos, registrar evolução e explorar exercícios de forma prática.
+# 💪 GymApp - Seu Gerenciador de Treinos Pessoal
 
-📲 Projeto inspirado na trilha Ignite da Rocketseat, com melhorias e recursos exclusivos.
+Leve seus treinos para o **próximo nível** com o **GymApp**!  
+Um app mobile moderno e funcional, criado com **React Native + Expo** e uma API robusta em **Node.js**, perfeito para quem quer acompanhar treinos, registrar evolução e explorar exercícios de forma prática.
 
-✨ Funcionalidades Principais
-🔐 Autenticação Segura: Login e registro de usuários com JWT.
+> 📲 Projeto inspirado na trilha Ignite da Rocketseat, com melhorias e recursos exclusivos.
 
-🏋️ Catálogo Completo de Exercícios: Navegue por grupos musculares e encontre novos exercícios.
+---
 
-📖 Visualização Detalhada: Acesso a GIFs e instruções claras para cada exercício.
+## 🎥 Demonstração
 
-📊 Histórico de Treinos Automatizado: Marque exercícios como concluídos e mantenha seu histórico sempre atualizado.
+*(Adicione aqui prints ou um GIF mostrando o app em ação)*
 
-👤 Perfil Personalizável: Atualize suas informações e adicione uma foto de perfil.
+---
 
-💎 Código Limpo e Escalável: Arquitetura componentizada, seguindo as melhores práticas de desenvolvimento.
+## ✨ Funcionalidades
 
-🛠️ Tecnologias Utilizadas
-📱 Mobile (React Native + Expo)
-Framework: React Native + Expo
+- 🔐 **Autenticação Segura**
+- 🏋️ **Catálogo Completo de Exercícios**
+- 📖 **Visualização Detalhada dos Exercícios**
+- 📊 **Histórico de Treinos Automatizado**
+- 👤 **Perfil com Foto Personalizada**
+- 💎 **Código Limpo, Escalável e Componentizado**
 
-Linguagem: TypeScript
+---
 
-Navegação: React Navigation
+## 🛠️ Tecnologias
 
-Requisições HTTP: Axios
+### 📱 Mobile - React Native + Expo
 
-Formulários: React Hook Form + Yup
+- React Native + Expo
+- TypeScript
+- React Navigation
+- Axios
+- React Hook Form + Yup
+- AsyncStorage
+- Gluestack UI
+- Lucide Icons
 
-Armazenamento Local: AsyncStorage
+### ⚙️ API - Node.js + SQLite
 
-UI Kit: Gluestack UI
+- Express
+- SQLite3 + Knex
+- JWT (Autenticação)
+- Multer (Upload de Imagens)
+- Swagger (Documentação da API)
+- Dayjs (Manipulação de Datas)
 
-Ícones: Lucide Icons
+---
 
-⚙️ API (Node.js)
-Framework: Express
+## 🚀 Como Rodar o Projeto
 
-Banco de Dados: SQLite3 com Knex.js
+### 📋 Pré-requisitos
 
-Autenticação: JWT (JSON Web Token)
+- Node.js (v18+)
+- NPM ou Yarn
+- App **Expo Go** instalado no celular
+- (Opcional) Emulador Android ou Simulador iOS
 
-Upload de Arquivos: Multer
+---
 
-Manipulação de Datas: Dayjs
+### 📦 Instalação e Execução
 
-Documentação: Swagger
-
-🚀 Como Rodar o Projeto
-✅ Pré-requisitos
-Node.js (v18 ou superior)
-
-NPM ou Yarn
-
-Expo Go app instalado no seu smartphone
-
-(Opcional) Emulador Android ou Simulador iOS
-
-📦 Instalação e Execução
-Clone o repositório:
-
-Bash
-
+```bash
+# Clone o projeto
 git clone https://github.com/rafconrado/gymapp.git
+
 cd gymapp
-Inicie a API (Backend):
-
-Bash
-
-# Acesse a pasta da API
+🔌 Iniciando a API
+bash
+Copiar
+Editar
+# Acesse o backend
 cd api
 
 # Instale as dependências
 npm install
 
-# Execute as migrations para criar o banco de dados
+# Rode as migrations
 npm run migrate
 
-# (Opcional) Popule o banco com dados iniciais
+# (Opcional) Popule o banco
 npm run seed
 
 # Inicie o servidor
 npm run dev
-🚀 A API estará rodando em http://localhost:3333.
+A API estará disponível em: http://localhost:3333
 
-Inicie o App Mobile (Frontend):
-
-Bash
-
-# Volte para a raiz e acesse a pasta do mobile
+📱 Iniciando o App Mobile
+bash
+Copiar
+Editar
+# Acesse o app mobile
 cd ../mobile
 
 # Instale as dependências
 npm install
 
-# Inicie o Metro Bundler com Expo
+# Inicie o Expo
 npm start
-📲 Escaneie o QR Code exibido no terminal com o app Expo Go para abrir o GymApp no seu celular.
+# ou
+expo start
+📲 Leia o QR Code com o app Expo Go e comece a usar!
 
 ⚙️ Scripts Úteis
-Projeto
+📂 Projeto	🛠️ Script	🔎 Descrição
+API	npm run dev	Inicia o backend
+npm run migrate	Cria o banco de dados
+npm run seed	Popula dados fictícios
+Mobile	npm start	Inicia o projeto no Expo
+npm run android	Roda no emulador Android
+npm run ios	Roda no simulador iOS
 
-Script
+🤝 Contribua com o Projeto
+Quer colaborar? Siga os passos abaixo:
 
-Descrição
+bash
+Copiar
+Editar
+# Faça um fork
+git clone https://github.com/seu-usuario/gymapp.git
 
-API
+# Crie uma branch
+git checkout -b feature/NovaFeature
 
-npm run dev
+# Faça o commit
+git commit -m 'feat: adiciona NovaFeature'
 
-Inicia o servidor em modo de desenvolvimento.
+# Faça o push
+git push origin feature/NovaFeature
+Abra um Pull Request e ajude o projeto a crescer 🚀
 
-npm run migrate
-
-Cria as tabelas do banco de dados.
-
-npm run seed
-
-Popula o banco com dados fictícios.
-
-Mobile
-
-npm start
-
-Inicia o projeto com Expo.
-
-npm run android
-
-Roda o app no emulador Android.
-
-npm run ios
-
-Roda o app no simulador iOS.
-
-
-Exportar para as Planilhas
-🤝 Como Contribuir
-Quer ajudar o projeto a crescer? Contribuições são muito bem-vindas!
-
-Faça um Fork deste repositório.
-
-Crie uma nova branch para sua feature:
-
-Bash
-
-git checkout -b feature/minha-nova-feature
-Faça o commit das suas alterações:
-
-Bash
-
-git commit -m 'feat: Adiciona minha nova feature'
-Envie para o seu repositório:
-
-Bash
-
-git push origin feature/minha-nova-feature
-Abra um Pull Request.
-
-Feito com 💙 por Rafael Conrado.
+📧 Contato
+Feito com 💙 por Rafael Conrado
