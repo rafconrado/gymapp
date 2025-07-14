@@ -9,7 +9,9 @@ Um app mobile moderno e funcional, criado com **React Native + Expo** e uma API 
 
 ## 🎥 Demonstração
 
-*(Adicione aqui prints ou um GIF mostrando o app em ação)*
+*https://github.com/user-attachments/assets/4ad120c7-1a52-4bdd-95c8-b0a1e00faafe*
+
+
 
 ---
 
