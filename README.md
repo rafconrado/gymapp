@@ -61,50 +61,59 @@ Um app mobile moderno e funcional, criado com **React Native + Expo** e uma API 
 
 ## 🚀 Instalação e Execução
 
-### Clone o Projeto
+### 📥 Clone o Projeto
 
-bash
+```bash
 git clone https://github.com/rafconrado/gymapp.git
 cd gymapp
-Configurar API (Backend)
-bash
-Copiar
-Editar
+```
+
+---
+
+### 🔌 Configurar API (Backend)
+
+```bash
 cd api
 npm install
 npm run migrate
 npm run seed   # opcional
 npm run dev
-A API estará em: http://localhost:3333
+```
 
-Configurar App Mobile
-bash
-Copiar
-Editar
+> A API estará rodando em: [http://localhost:3333](http://localhost:3333)
+
+---
+
+### 📱 Configurar App Mobile
+
+```bash
 cd ../mobile
 npm install
 npm start
 # ou
 expo start
+```
 
-🤝 Contribua com o Projeto
-Quer colaborar? Siga os passos abaixo:
+> Abra o **Expo Go** no celular e escaneie o QR Code exibido no terminal.
 
-bash
-Copiar
-Editar
-# Faça um fork
-git clone https://github.com/seu-usuario/gymapp.git
+---
 
-# Crie uma branch
-git checkout -b feature/NovaFeature
+## 🤝 Contribuindo
 
-# Faça o commit
-git commit -m 'feat: adiciona NovaFeature'
+1. Faça um fork do projeto  
+2. Crie uma nova branch:  
+   `git checkout -b feature/SuaFuncionalidade`  
+3. Faça commit das suas alterações:  
+   `git commit -m 'feat: adiciona nova funcionalidade'`  
+4. Faça push para o seu fork:  
+   `git push origin feature/SuaFuncionalidade`  
+5. Abra um **Pull Request** 🚀
 
-# Faça o push
-git push origin feature/NovaFeature
-Abra um Pull Request e ajude o projeto a crescer 🚀
+---
 
-📧 Contato
-Feito com 💙 por Rafael Conrado
+## 📧 Contato
+
+Feito com 💙 por **Rafael Conrado**
+
+- 🔗 [GitHub](https://github.com/rafconrado)
+- 🔗 [LinkedIn](https://linkedin.com/in/rafconradoo)
