@@ -5,6 +5,13 @@ Um app mobile moderno e funcional, criado com **React Native + Expo** e uma API 
 
 > 📲 Projeto inspirado na trilha Ignite da Rocketseat, com melhorias e recursos exclusivos.
 
+
+
+https://github.com/user-attachments/assets/c087a289-13be-4f36-b76c-91183eb575d0
+
+
+
+
 ---
 
 ## ✨ Funcionalidades
